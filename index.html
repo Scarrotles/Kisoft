@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KiSoft</title>
+    <link rel="icon" href="images/win.png">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"> -->
+    <style>
+        *{
+            padding: 0 ;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body{
+            background-color: #F4F8FA;
+        }
+        ::-webkit-scrollbar{
+            display: none;
+        }
+
+        /* header */
+        header{
+            display: flex;
+            background: url(images/head.jpg);
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 80vh;
+            align-items: center;
+            justify-content: center;
+            /* border: 1px solid red; */
+        }
+        header img{
+            display: block;
+            max-width: 180px;
+            width: 100%;
+            /* border: 1px solid rgb(0, 21, 255); */
+
+        }
+        /* navbar */
+        .desktop{
+            display: flex;
+            width: 100%;
+            height: fit-content;
+            padding: 20px 0;
+            justify-content: center;
+            z-index: 1;
+            /* border: 1px solid red; */
+        }
+        .desktop ul{
+            display: flex;
+            padding: 0;
+            gap: 30px;
+            justify-content: center;
+            width: fit-content;
+            /* border: 1px solid blue; */
+        }
+        .desktop li{
+            list-style: none;
+            align-items: flex-end;
+            /* border: 1px solid green; */
+        }
+        .desktop li a{
+            color: black;
+            font-weight: bold;
+            line-height: 50px;
+            text-decoration: none;
+            /* border: 1px solid red; */
+        }
+
+        /* intro */
+        .intro{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            padding: 50px 0;
+            /* border: 1px solid yellow; */
+        }
+        .intro .content{
+            display: flex;
+            padding: 0 50px;
+            flex-wrap: wrap-reverse;
+            max-width: 800px;
+            width: 80%;
+            justify-content: space-between;
+            align-items: center;
+            /* border: 1px solid red; */
+        }
+        .win h1{
+            font-size: 48px;
+            font-weight: bold;
+            /* border: 1px solid red; */
+        }
+        
+        .win h5{
+            font-size: 20px;
+            font-weight: bold;
+            /* border: 1px solid red; */
+        }
+        .intro .content img{
+            height: 270px;
+            /* border: 1px solid rgb(1, 114, 22); */
+        }
+
+        /* slogan */
+        .slogan{
+            width: 100%;
+            font-size: 12px;
+            text-align: center;
+            font-style: italic;
+            /* border: 1px solid rgb(1, 114, 22); */
+        }
+
+        /* feature */
+        .feature h4{
+            padding: 0 10px;
+            font-size: 32px;
+            font-weight: 500;
+            /* border: 1px solid red; */
+        }
+        span{
+            color: #00A3FF;
+        }
+        .feature{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            padding: 50px 0;
+            /* border: 1px solid yellow; */
+        }
+        .feature .f-content{
+            
+            display: flex;
+            flex-direction: column;
+            row-gap: 20px;
+            text-align: center;
+            /* border: 1px solid red; */
+        }
+        .feature .f-content video{
+            position: relative;
+            overflow: hidden;
+            max-height: 405px;
+            width: 90%;
+            margin: auto;
+            /* border: 1px solid rgb(0, 4, 255); */
+        }
+
+        /* Testimoni */
+        .testimoni{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            padding: 50px 0;
+            /* border: 1px solid yellow; */
+        }
+        .testimoni .content{
+            display: flex;
+            flex-direction: column;
+            row-gap: 20px;
+            text-align: center;
+            /* border: 1px solid red; */
+        }
+        .testimoni .content h4{
+            padding: 0 10px;
+            font-size: 32px;
+            font-weight: 500;
+            /* border: 1px solid red; */
+        }
+
+        /* card-box */
+        .testimoni .content .testi{
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            justify-content: center;
+            gap: 20px;
+            /* border: 1px solid rgb(0, 8, 255); */
+        }
+
+        /* card */
+        .card{
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 10px;
+            max-width: 250px;
+            border-radius: 11px;
+            height: fit-content;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            /* border: 1px solid rgb(255, 255, 0); */
+        }
+
+        /* card-atas */
+        .card .card-body{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            /* border: 1px solid rgb(0, 60, 255); */
+        }
+        
+        .card-body img{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            /* border: 2px solid black; */
+        }
+        .card-text{
+            display: grid;
+            height: fit-content;
+            text-align: left;
+            /* border: 1px solid rgb(234, 255, 0); */
+        }
+        .card-text h5,.card-text h6{
+            margin: 0;
+            /* border: 1px solid rgb(255, 0, 0); */
+        }
+
+        /* card-bawah */
+        .card p{
+            font-size: 14;
+            /* border: 1px solid rgb(255, 0, 0); */
+        }
+        .testimoni .content a{
+            color: #1079BB ;
+            width: fit-content;
+            margin: auto;
+            text-decoration: none;
+            /* border: 1px solid blue; */
+        }
+
+        /* require */
+        .require{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            padding: 50px 0;
+            /* border: 1px solid yellow; */
+        }
+        .require .content{
+            display: flex;
+            flex-direction: column;
+            max-width: 800px;
+            row-gap: 20px;
+            /* justify-content: center; */
+            text-align: center;
+            /* border: 1px solid rgb(17, 255, 0); */
+        }
+        .require .content h4{
+            padding: 0 10px;
+            font-size: 32px;
+            font-weight: 500;
+            /* border: 1px solid red; */
+        }
+        .require .content img{
+            margin: auto;
+            width: 80%;
+            /* border: 1px solid rgb(0, 21, 255); */
+        }
+
+        .promo{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            padding: 50px 0;
+            background: #E9F6FF;
+            box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.05);
+            /* border: 1px solid yellow; */
+        }
+        .promo .content{
+            display: flex;
+            flex-wrap: wrap;
+            row-gap: 20px;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            /* border: 1px solid rgb(17, 255, 0); */
+        }
+        .promo .content img{
+            max-width: 500px;
+            width: 90%;
+            /* border: 1px solid blue; */
+        }
+        .promo-text{
+            display: flex;
+            flex-direction: column;
+            padding-left: 50px;
+            row-gap: 50px;
+            height: 70%;
+            text-align: left;
+            /* border: 1px solid rgb(255, 0, 0); */
+        }
+        .promo-text h4{
+            font-size: 32px;
+            font-weight: 500;
+            /* border: 1px solid red;  */
+        }
+        .button{
+            display: flex;
+            text-decoration: none;
+            gap: 8px;
+            line-height: 16px;
+            border-radius: 11px;
+            padding: 14px 24px;
+            width: fit-content;
+            color: #DFDFDF;
+            font-size: 16px;
+            font-weight: 600;
+            background: #10509D;
+            /* border: 1px solid rgb(0, 0, 0); */
+        }
+
+        .foot{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            /* border: 1px solid rgb(255, 0, 0); */
+        }
+        .foot .content{
+            display: flex;
+            flex-wrap: wrap;
+            row-gap: 20px;
+            padding: 50px 0;
+            width: 80%;
+            justify-content: space-between;
+            /* border: 1px solid rgb(51, 0, 255); */
+        }
+        .c{
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+            /* border: 1px solid rgb(255, 0, 0); */
+        }
+        .c .info{
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+        }
+        .c ul li{
+            font-size: 12px;
+            list-style: none;
+        }
+        .c ul li ion-icon{
+            display: flex;
+            font-size: 20px;
+        }
+        .sponsor{
+            display: flex;
+            gap: 10px;
+        }
+
+        footer{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            /* border: 1px solid rgb(255, 0, 0); */
+        }
+        footer .content{
+            display: flex;
+            padding: 10px 0;
+            flex-wrap:wrap-reverse;
+            gap: 10px;
+            width: 80%;
+            justify-content: space-between;
+            /* border: 1px solid rgb(111, 0, 255); */
+        }
+        footer .content h5{
+            width: fit-content;
+        }
+        footer .content div{
+            min-width: 30%;
+            width: fit-content;
+            column-gap: 120px;
+            display: flex;
+            justify-content: space-between;
+            /* border: 1px solid rgb(255, 0, 0); */
+        }
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="images/R-logo.png" class="h-logo" alt="" >
+    </header>
+    <nav class="desktop">
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Price</a></li>
+        </ul>
+    </nav>
+    <div class="intro">
+        <div class="content">
+            <div class="win">
+                <h1>Windows7</h1>
+                <h5>Elevating Productivity and Comfort</h5>
+            </div>
+            <img src="images/7.png" alt="">
+        </div>
+    </div>
+    <p class="slogan"> "Explore the Latest Features and a Familiar Interface for a Better Computing Experience"</p>
+    <div class="feature">
+        <div class="f-content">
+            <h4>Discover a <span>New Feature</span></h4>
+            <video id="my-video" src="video/win7.mp4"  autoplay ></video>
+            
+            <!-- Chat GPT -->
+            <script>
+                // Fungsi untuk memeriksa apakah elemen dalam tampilan
+                function isElementInViewport(el) {
+                    const rect = el.getBoundingClientRect();
+                    return (
+                        rect.top >= 0 &&
+                        rect.left >= 0 &&
+                        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                    );
+                }
+        
+                const video = document.getElementById('my-video');
+        
+                // Memeriksa apakah video dalam tampilan saat menggulir
+                function checkVideoInView() {
+                    if (isElementInViewport(video)) {
+                        video.play();
+                    } else {
+                        video.pause();
+                    }
+                }
+        
+                // Memeriksa saat pertama kali halaman dimuat
+                window.addEventListener('load', checkVideoInView);
+                // Memeriksa saat menggulir halaman
+                window.addEventListener('scroll', checkVideoInView);
+            </script>
+
+        </div>
+    </div>
+    <div class="testimoni">
+        <div class="content">
+            <h4>Testimonial</h4>
+            <div class="testi">
+
+                <!-- isi testi orang -->
+                <div class="card">
+                    <div class="card-body">
+                        <img src="images/Albedo.png" alt="">
+                        <div class="card-text">
+                            <h5>Sarah Johnson</h5>
+                            <h6>2 minute ago</h6>
+                        </div>
+                    </div>
+                    <p>"Windows 7 has made my work so much smoother. 
+                        The features like Snap and Libraries are fantastic!"</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <img src="images/Albedo.png" alt="">
+                        <div class="card-text">
+                            <h5>Sarah Johnson</h5>
+                            <h6>2 minute ago</h6>
+                        </div>
+                    </div>
+                    <p>"Windows 7 has made my work so much smoother. 
+                        The features like Snap and Libraries are fantastic!"</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-body">
+                        <img src="images/Albedo.png" alt="">
+                        <div class="card-text">
+                            <h5>Sarah Johnson</h5>
+                            <h6>2 minute ago</h6>
+                        </div>
+                    </div>
+                    <p>"Windows 7 has made my work so much smoother. 
+                        The features like Snap and Libraries are fantastic!"</p>
+                </div>
+
+            </div>
+            <a href="">View All Review</a>
+        </div>
+    </div>
+    <div class="require">
+        <div class="content">
+            <h4>Compatibility and <span>System Requirements</span></h4>
+            <img src="images/req.png" alt="">
+        </div>
+    </div>
+    <div class="promo">
+        <div class="content">
+            <img src="images/offer.png" alt="">
+            <div class="promo-text">
+                <div>
+                    <h4>Limited Time Offer <span>Discount 80%</span></h4>
+                    <h5>Don't Miss Out</h5>
+                </div>
+                <a href="" class="button"><ion-icon name="bag-outline"></ion-icon>Purchase</a>
+            </div>
+        </div>
+    </div>
+    <div class="foot">
+        <div class="content">
+            <div class="c">
+                <h5>Blog and News</h5>
+                <ul class="info">
+                    <li>10 Tips for Maximizing Productivity with Windows 7</li>
+                    <li>Exploring the Hidden Gems of Windows 7: Features You Might Have Missed</li>
+                    <li>Customer Spotlight: How Windows 7 Transformed XYZ Company's Operations</li>
+                </ul>
+            </div>
+            <div class="c">
+                <h5>Contact</h5>
+                <ul class="info">
+                    <li>CS: customer-service@gmail.com</li>
+                    <li>Address: 123 Tech Avenue, Suite 456, Cityville, USA.</li>
+                </ul>
+            </div>
+            <div class="c">
+                <h5>Our Partner</h5>
+                <ul class="sponsor">
+                    <li><ion-icon name="logo-facebook"></ion-icon></li>
+                    <li><ion-icon name="logo-instagram"></ion-icon></li>
+                    <li><ion-icon name="logo-twitter"></ion-icon></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="content">
+            <h5>Copyright 2022 All Rights Reserved</h5>
+            <div>
+                <h5>Privacy Policy</h5>
+                <h5>Terms of Use</h5>
+            </div>
+        </div>
+    </footer>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</html>
