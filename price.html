@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KiSoft</title>
+    <link rel="icon" href="images/win.png">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"> -->
+    <style>
+        *{
+            padding: 0 ;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body{
+            background-color: #F4F8FA;
+        }
+        ::-webkit-scrollbar{
+            display: none;
+        }
+
+        /* header */
+        header{
+            display: flex;
+            background: url(images/head.jpg);
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 80vh;
+            align-items: center;
+            justify-content: center;
+            /* border: 1px solid red; */
+        }
+        header img{
+            display: block;
+            max-width: 180px;
+            width: 100%;
+            /* border: 1px solid rgb(0, 21, 255); */
+
+        }
+        /* navbar */
+        .desktop{
+            display: flex;
+            width: 100%;
+            height: fit-content;
+            padding: 20px 0;
+            justify-content: center;
+            z-index: 1;
+            /* border: 1px solid red; */
+        }
+        .desktop ul{
+            display: flex;
+            padding: 0;
+            gap: 30px;
+            justify-content: center;
+            width: fit-content;
+            /* border: 1px solid blue; */
+        }
+        .desktop li{
+            list-style: none;
+            align-items: flex-end;
+            /* border: 1px solid green; */
+        }
+        .desktop li a{
+            color: black;
+            font-weight: bold;
+            line-height: 50px;
+            text-decoration: none;
+            /* border: 1px solid red; */
+        }
+        .product{
+            display: flex;
+            justify-content: center;
+            padding: 50px 0;
+            width: 100%;
+        }
+        .product .content{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            justify-content: center;
+            gap: 20px;
+            width: 100%;
+            /* max-width: 1000px; */
+        }
+        .product .content h4{
+            font-size: 32px;
+            font-weight: 700;
+        }
+        .product .content .slogan{
+            width: 90%;
+        }
+        .product .content p{
+            margin: auto;
+            max-width: 1000px;
+            width: 100%;
+            font-size: 20px;
+            /* border: 1px solid blue; */
+        }
+        .blue{
+            color: #00A3FF;
+        }
+        .price{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 50px 0;
+            gap: 20px;
+            width: 100%;
+        }
+        .card{
+            max-width: 280px;
+            width: 100%;
+            height: fit-content;
+            border-radius: 10px;
+            background-color: rgb(255, 255, 255);
+            box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.1);
+            /* border: 1px solid red; */
+        }
+        .card .lite{
+            color: #F4F8FA;
+            padding: 10px;
+            border-radius: 10px 10px 0 0;
+            background-color: #81BC06;
+        }
+        .card .pro{
+            color: #F4F8FA;
+            padding: 10px;
+            border-radius: 10px 10px 0 0;
+            background-color: #FFBA08;
+        }
+        .card .ente{
+            color: #F4F8FA;
+            padding: 10px;
+            border-radius: 10px 10px 0 0;
+            background-color: #F35325;
+        }
+        .card .value{
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        .value-desc{
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            gap: 20px;
+            padding: 10px 0;
+        }
+        .value-desc h1{
+            font-size: 48px;
+            font-weight: 500;
+        }
+        .value-desc h1 .dollar{
+            font-size: 20px;
+        }
+        .value-desc h1 .month{
+            font-size: 20px;
+        }
+        .value-desc a{
+            padding: 8px 16px;
+            font-weight: 500;
+            width: fit-content;
+            margin: auto;
+            color: #F4F8FA;
+            background-color: #10509D;
+            border-radius: 10px;
+            text-decoration: none;
+        }
+        .value-desc a:hover{
+            cursor: pointer;
+            box-shadow: 0px 2px 4px 0px #3f6da46f;
+            transition: 0.05S;
+        }
+        .value-desc-1{
+           text-align: left;
+           width: 90%;
+           padding: 20px;
+           /* border-radius: 10px; */
+        }
+        .value-desc-1 ul p{
+            width: 100%;
+        }
+        .value-desc-1 li{
+            margin: 0 20px;
+        }
+
+        .foot{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            background-color: #f2f2f2;
+            /* border: 1px solid rgb(255, 0, 0); */
+        }
+        .foot .content{
+            display: flex;
+            flex-wrap: wrap;
+            row-gap: 20px;
+            padding: 50px 0;
+            width: 80%;
+            justify-content: space-between;
+            /* border: 1px solid rgb(51, 0, 255); */
+        }
+        .c{
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+            /* border: 1px solid rgb(255, 0, 0); */
+        }
+        .c .info{
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+        }
+        .c ul li{
+            font-size: 12px;
+            list-style: none;
+        }
+        .c ul li ion-icon{
+            display: flex;
+            font-size: 20px;
+        }
+        .sponsor{
+            display: flex;
+            gap: 10px;
+        }
+
+        footer{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            background-color: #f2f2f2;
+            /* border: 1px solid rgb(255, 0, 0); */
+        }
+        footer .content{
+            display: flex;
+            padding: 10px 0;
+            flex-wrap:wrap-reverse;
+            gap: 10px;
+            width: 80%;
+            justify-content: space-between;
+            /* border: 1px solid rgb(111, 0, 255); */
+        }
+        footer .content h5{
+            width: fit-content;
+        }
+        footer .content div{
+            min-width: 30%;
+            width: fit-content;
+            column-gap: 120px;
+            display: flex;
+            justify-content: space-between;
+            /* border: 1px solid rgb(255, 0, 0); */
+        }
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="images/R-logo.png" class="h-logo" alt="" >
+    </header>
+    <nav class="desktop">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="price.html">Price</a></li>
+            <li><a href="faq.html">FaQ</a></li>
+        </ul>
+    </nav>
+    <div class="product" id="product">
+        <div class="content">
+            <h4>Our <span class="blue">Product</span></h4>
+            <p class="slogan">"Perfect your computing experience with Windows 7. 
+                Don't miss our exclusive offer - buy now and save big!"</p>
+            <div class="price">
+                <div class="card">
+                    <h4 class="lite">Lite</h4>
+                    <div class="value">
+                        <div class="value-desc">
+                            <h1><sup class="dollar">$</sup>00<sub class="month">/Month</sub></h1>
+                            <a href="">Free</a>
+                        </div>
+                        <div class="value-desc-1">
+                            <ul>
+                                <p>What You Get:</p>
+                                <li>Limited Usage</li>
+                                <li>Email Support</li>
+                                <li>Access to Template Library</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <h4 class="pro">Professional</h4>
+                    <div class="value">
+                        <div class="value-desc">
+                            <h1><sup class="dollar">$</sup>19<sub class="month">/Month</sub></h1>
+                            <a href="">Buy Now</a>
+                        </div>
+                        <div class="value-desc-1">
+                            <ul>
+                                <p>What You Get:</p>
+                                <li>Limited Usage</li>
+                                <li>Email Support</li>
+                                <li>Access to Template Library</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <h4  class="ente">Enterprise</h4>
+                    <div class="value">
+                        <div class="value-desc">
+                            <h1><sup class="dollar">$</sup>29<sub class="month">/Month</sub></h1>
+                            <a href="">Buy Now</a>
+                        </div>
+                        <div class="value-desc-1">
+                            <ul>
+                                <p>What You Get:</p>
+                                <li>Limited Usage</li>
+                                <li>Email Support</li>
+                                <li>Access to Template Library</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="foot">
+        <div class="content">
+            <div class="c">
+                <h5>Blog and News</h5>
+                <ul class="info">
+                    <li>10 Tips for Maximizing Productivity with Windows 7</li>
+                    <li>Exploring the Hidden Gems of Windows 7: Features You Might Have Missed</li>
+                    <li>Customer Spotlight: How Windows 7 Transformed XYZ Company's Operations</li>
+                </ul>
+            </div>
+            <div class="c">
+                <h5>Contact</h5>
+                <ul class="info">
+                    <li>CS: customer-service@gmail.com</li>
+                    <li>Address: 123 Tech Avenue, Suite 456, Cityville, USA.</li>
+                </ul>
+            </div>
+            <div class="c">
+                <h5>Our Partner</h5>
+                <ul class="sponsor">
+                    <li><ion-icon name="logo-facebook"></ion-icon></li>
+                    <li><ion-icon name="logo-instagram"></ion-icon></li>
+                    <li><ion-icon name="logo-twitter"></ion-icon></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="content">
+            <h5>Copyright 2022 All Rights Reserved</h5>
+            <div>
+                <h5>Privacy Policy</h5>
+                <h5>Terms of Use</h5>
+            </div>
+        </div>
+    </footer>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</html>

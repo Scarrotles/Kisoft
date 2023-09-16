@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KiSoft</title>
+    <link rel="icon" href="images/win.png">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous"> -->
+    <style>
+        *{
+            padding: 0 ;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        body{
+            background-color: #F4F8FA;
+        }
+        ::-webkit-scrollbar{
+            display: none;
+        }
+
+        /* header */
+        header{
+            display: flex;
+            background: url(images/head.jpg);
+            background-size: cover;
+            background-position: center;
+            width: 100%;
+            height: 80vh;
+            align-items: center;
+            justify-content: center;
+            /* border: 1px solid red; */
+        }
+        header img{
+            display: block;
+            max-width: 180px;
+            width: 100%;
+            /* border: 1px solid rgb(0, 21, 255); */
+
+        }
+        /* navbar */
+        .desktop{
+            display: flex;
+            width: 100%;
+            height: fit-content;
+            padding: 20px 0;
+            justify-content: center;
+            z-index: 1;
+            /* border: 1px solid red; */
+        }
+        .desktop ul{
+            display: flex;
+            padding: 0;
+            gap: 30px;
+            justify-content: center;
+            width: fit-content;
+            /* border: 1px solid blue; */
+        }
+        .desktop li{
+            list-style: none;
+            align-items: flex-end;
+            /* border: 1px solid green; */
+        }
+        .desktop li a{
+            color: black;
+            font-weight: bold;
+            line-height: 50px;
+            text-decoration: none;
+            /* border: 1px solid red; */
+        }
+
+        .about{
+            display: flex;
+            width: 100%;
+            padding: 50px 0;
+            /* border: 1px solid red; */
+        }
+        .about .content{
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            justify-content: center;
+            row-gap: 20px;
+            /* border: 1px solid rgb(13, 0, 255); */
+
+        }
+        .about .content h4{
+            display: flex;
+            font-size: 32px;
+            font-weight: bold;
+            justify-content: center;
+            /* border: 1px solid rgb(255, 0, 0); */
+        }
+        .about .content .desc{
+            display: flex;
+            width: fit-content;
+            margin: auto;
+            flex-direction: column;
+            gap: 20px;
+            /* border: 1px solid rgb(15, 117, 5); */
+        }
+        .about .content .desc .up{
+            display: flex;
+            flex-wrap: wrap-reverse;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            /* border: 1px solid rgb(255, 0, 0); */
+        }
+        .about .content .desc .up p{
+            display: flex;
+            text-align: justify;
+            font-size: 16px;
+            line-height: 20px;
+            max-width: 700px;
+            width: 90%;
+            /* border: 1px solid rgb(0, 21, 255); */
+        }
+        .about .content .desc .up img{
+            display: flex;
+            max-height: 300px;
+            height: 80%;
+            /* border: 1px solid rgb(225, 0, 255); */
+        }
+
+        .about .content .desc .down{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            /* border: 1px solid rgb(255, 0, 0); */
+        }
+        .about .content .desc .down p{
+            display: flex;
+            text-align: justify;
+            font-size: 16px;
+            line-height: 20px;
+            max-width: 520px;
+            width: 90%;
+            /* border: 1px solid rgb(0, 21, 255); */
+        }
+        .about .content .desc .down img{
+            display: flex;
+            max-height: 260px;
+            max-width: 400px;
+            width: 90%;
+            /* border: 1px solid rgb(225, 0, 255); */
+        }
+
+        .vimi{
+            width: 100%;
+            padding: 50px 0;
+            justify-content: center;
+            /* border: 1px solid rgb(255, 0, 0); */
+        }
+        .vimi-content{
+            display: flex;
+            max-width: 1000px;
+            width: 90%;
+            flex-direction: column;
+            row-gap: 50px;
+            margin: auto;
+            /* border: 1px solid rgb(255, 0, 0); */
+        }
+        .blue{
+            color: #00A3FF;
+        }
+        .visi{
+            display: flex;
+            flex-direction: column;
+            row-gap: 20px;
+            /* border: 1px solid rgb(255, 0, 0); */
+        }
+        .visi h4{
+            font-size: 32px;
+            font-weight: bold;
+        }
+        .visi p{
+            font-size: 16px;
+            line-height: 20px;
+            /* text-align: justify; */
+        }
+        .misi{
+            display: flex;
+            flex-direction: column;
+            row-gap: 20px;
+            /* border: 1px solid rgb(255, 0, 0); */
+        }
+        .misi h4{
+            font-size: 32px;
+            font-weight: bold;
+        }
+        .misi p{
+            font-size: 16px;
+            line-height: 20px;
+            /* text-align: justify; */
+        }
+        .contribution{
+            display: flex;
+            width: 100%;
+            padding: 50px 0;
+            justify-content: center;
+        }
+        .contribution .content{
+            margin: auto;
+            display: flex;
+            flex-direction:column;
+            gap: 20px;
+            width: 100%;
+            /* border: 1px solid rgb(255, 0, 0); */
+        }
+        .contribution .content h4{
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+        }
+        .team{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            max-width: 1000px;
+            width: 90%;
+            margin: auto;
+            /* border: 1px solid rgb(25, 0, 255); */
+        }
+        .member{
+            width: fit-content;
+            padding: 10px 20px;
+            background-color: white;
+            font-weight: 500;
+            border-radius: 11px;
+            box-shadow:  0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .slogan{
+            width: 90%;
+            margin: auto;
+            font-size: 12px;
+            text-align: center;
+            font-style: italic;
+            /* border: 1px solid rgb(25, 0, 255); */
+        }
+        .join{
+            display: flex;
+            width: 100%;
+            padding: 20px 0;
+            justify-content: center;
+            text-align: center;
+            /* border: 1px solid rgb(25, 0, 255); */
+        }
+        .join a{
+            padding: 8px 16px;
+            font-weight: 500;
+            color: #F4F8FA;
+            background-color: #10509D;
+            border-radius: 10px;
+            text-decoration: none;
+            /* border: 1px solid blue; */
+        }
+        .join a:hover{
+            cursor: pointer;
+            box-shadow: 0px 2px 4px 0px #3f6da46f;
+            transition: 0.05S;
+        }
+        .project{
+            display: flex;
+            width: 100%;
+            padding: 50px 0;
+        }
+        .project .content{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            row-gap: 20px;
+            width: 100%;
+            /* border: 1px solid rgb(255, 0, 0); */
+        }
+        .project .content h4{
+            font-size: 32px;
+            font-weight: bold;
+            text-align: center;
+            /* border: 1px solid blue; */
+        }
+        .project .content .project-content{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: auto;
+            gap: 30px;
+            width: 80%;
+            /* border: 1px solid rgb(255, 0, 0); */
+        }
+        .project .content .project-content .icon{
+            display: flex;
+            height: 70px;
+            /* border: 1px solid rgb(255, 0, 0); */
+        }
+        .location{
+            display: flex;
+            width: 100%;
+            padding: 50px 0;
+            justify-content: center;
+            /* border: 1px solid rgb(255, 0, 0); */
+        }
+        .location .content{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            justify-content: center;
+            align-items: center;
+            max-width: 1000px;
+            width: 100%;
+        }
+        .location .content img{
+            width: 90%;
+            max-height: 280px;
+            max-width: 400px;
+        }
+        .location .content .desc{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 90%;
+            max-width: 500px;
+            gap: 20px;
+        }
+        .location .content .desc h4{
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+        }
+        .location .content .desc p{
+            font-size: 16px;
+            line-height: 20px;
+            text-align: center;
+        }
+        .location .content .desc a{
+            padding: 8px 16px;
+            margin: auto;
+            width: fit-content;
+            font-weight: 500;
+            color: #F4F8FA;
+            background-color: #10509D;
+            border-radius: 10px;
+            text-decoration: none;
+        }
+        .location .content .desc a:hover{
+            cursor: pointer;
+            box-shadow: 0px 2px 4px 0px #3f6da46f;
+            transition: 0.05S;
+        }
+        .foot{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            background-color: #f2f2f2;
+            /* border: 1px solid rgb(255, 0, 0); */
+        }
+        .foot .content{
+            display: flex;
+            flex-wrap: wrap;
+            row-gap: 20px;
+            padding: 50px 0;
+            width: 80%;
+            justify-content: space-between;
+            /* border: 1px solid rgb(51, 0, 255); */
+        }
+        .c{
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+            /* border: 1px solid rgb(255, 0, 0); */
+        }
+        .c .info{
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+        }
+        .c ul li{
+            font-size: 12px;
+            list-style: none;
+        }
+        .c ul li ion-icon{
+            display: flex;
+            font-size: 20px;
+        }
+        .sponsor{
+            display: flex;
+            gap: 10px;
+        }
+
+        footer{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            background-color: #f2f2f2;
+            /* border: 1px solid rgb(255, 0, 0); */
+        }
+        footer .content{
+            display: flex;
+            padding: 10px 0;
+            flex-wrap:wrap-reverse;
+            gap: 10px;
+            width: 80%;
+            justify-content: space-between;
+            /* border: 1px solid rgb(111, 0, 255); */
+        }
+        footer .content h5{
+            width: fit-content;
+        }
+        footer .content div{
+            min-width: 30%;
+            width: fit-content;
+            column-gap: 120px;
+            display: flex;
+            justify-content: space-between;
+            /* border: 1px solid rgb(255, 0, 0); */
+        }
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="images/R-logo.png" class="h-logo" alt="" >
+    </header>
+    <nav class="desktop">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="price.html">Price</a></li>
+            <li><a href="faq.html">FaQ</a></li>
+        </ul>
+    </nav>
+    <div class="about">
+        <div class="content">
+            <h4>Microsoft</h4>
+            <div class="desc">
+                <div class="up">
+                    <p>Microsoft had already carved out a substantial legacy in the technology industry. 
+                        Founded by Bill Gates and Paul Allen in 1975 in Albuquerque, New Mexico, 
+                        Microsoft initially concentrated on developing programming languages and software for microcomputers, 
+                        including early versions of the MS-DOS operating system. However, the pivotal moment arrived in 1985 with the introduction of Windows 1.0, 
+                        Microsoft's first graphical user interface for MS-DOS. This marked the inception of the Windows operating system family as we know it today. 
+                        Subsequent milestones included Windows 3.0, a breakthrough in user-friendliness, Windows 95's interface overhaul, and the widespread popularity of Windows XP. 
+                        Despite these successes, Microsoft faced challenges with the mixed reception of Windows Vista due to performance and compatibility issues.</p>
+                    <img src="images/win.png" alt="">
+                </div>
+                <div class="down">
+                    <img src="images/msdapartment.jpg" alt="" hidden>
+                    <p>In response, Microsoft directed its efforts towards the development of Windows 7, which was launched in 2009. 
+                        Windows 7 swiftly became one of the most successful and beloved operating systems globally, 
+                        thanks to substantial performance enhancements and a more user-friendly interface. 
+                        This journey exemplifies Microsoft's commitment to improving and evolving its operating systems to cater to the evolving needs of computer users worldwide.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="vimi">
+        <div class="vimi-content">
+            <div class="visi">
+                <h4>Our <span class="blue">Vision</span></h4>
+                <p>"To empower every person and every organization on the planet to achieve more."</p>
+            </div>
+            <div class="misi">
+                <h4>Our <span class="blue">Mission</span></h4>
+                <p>"Our mission is to empower every person and every organization on the planet to achieve more. 
+                    We strive to create technology that is accessible to everyone, and we drive innovation that makes a real impact on people's lives. 
+                    With our products, we seek to inspire and enable people to achieve their dreams, and help organizations to transform their business digitally."</p>
+            </div>
+        </div>
+    </div>
+    <div class="contribution">
+        <div class="content">
+            <h4>Contribution <span class="blue">Team</span></h4>
+            <div class="team">
+                <div class="member">Windows Team</div>
+                <div class="member">Office Team</div>
+                <div class="member">Azure Team</div>
+                <div class="member">Xbox Team</div>
+                <div class="member">AI Team</div>
+                <div class="member">Window Server Team</div>
+                <div class="member">Visual Studio Team</div>
+                <div class="member">Microsoft 365 Team</div>
+                <div class="member">Research Team</div>
+                <div class="member">Linkedln Team</div>
+                <div class="member">Skype Team</div>
+                <div class="member">Insider Team</div>
+                <div class="member">Edge Team</div>
+                <div class="member">Scurity Team</div>
+                <div class="member">Mixed Reality Team</div>
+            </div>
+        </div>
+    </div>
+    <p class="slogan">
+        "Ready to be part of a team that's shaping the future of technology? Join us at Microsoft and let's innovate together!"
+    </p>
+    <div class="join">
+        <a href="https://www.microsoft.com/rpsauth/v1/account/SignIn?ru=https%3A%2F%2Fwww.microsoft.com%2Fid-id%2F">Join Us</a>
+    </div>
+    <div class="project">
+        <div class="content">
+            <h4>Our <span class="blue">Projects</span></h4>
+            <div class="project-content">
+                <img class="icon" src="images/mc.png" alt="">
+                <img class="icon" src="images/edge.png" alt="">
+                <img class="icon" src="images/ldin.png" alt="">
+                <img class="icon" src="images/team.png" alt="">
+                <img class="icon" src="images/win.png" alt="">
+                <img class="icon" src="images/azure.png" alt="">
+                <img class="icon" src="images/xbox.png" alt="">
+                <img class="icon" src="images/msoffice.png" alt="">
+                <img class="icon" src="images/cortana.png" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="location">
+        <div class="content">
+            <img src="images/maps.png" alt="">
+            <div class="desc">
+                <h4>Our <span class="blue">Location</span></h4>
+                <p>Jakarta Stock Exchange Building Tower II, lantai 18 Sudirman Central Business District, 
+                    Jl. Jenderal Sudirman No.Kav. 52-53, RT.5/RW.3, Senayan, Kec. Kby. Baru, Kota Jakarta Selatan, 
+                    Daerah Khusus Ibukota Jakarta 12190
+                </p>
+                <a href="https://maps.app.goo.gl/S6abYzbFinG3LqMb8">Find Out</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="foot">
+        <div class="content">
+            <div class="c">
+                <h5>Blog and News</h5>
+                <ul class="info">
+                    <li>10 Tips for Maximizing Productivity with Windows 7</li>
+                    <li>Exploring the Hidden Gems of Windows 7: Features You Might Have Missed</li>
+                    <li>Customer Spotlight: How Windows 7 Transformed XYZ Company's Operations</li>
+                </ul>
+            </div>
+            <div class="c">
+                <h5>Contact</h5>
+                <ul class="info">
+                    <li>CS: customer-service@gmail.com</li>
+                    <li>Address: 123 Tech Avenue, Suite 456, Cityville, USA.</li>
+                </ul>
+            </div>
+            <div class="c">
+                <h5>Our Partner</h5>
+                <ul class="sponsor">
+                    <li><ion-icon name="logo-facebook"></ion-icon></li>
+                    <li><ion-icon name="logo-instagram"></ion-icon></li>
+                    <li><ion-icon name="logo-twitter"></ion-icon></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="content">
+            <h5>Copyright 2022 All Rights Reserved</h5>
+            <div>
+                <h5>Privacy Policy</h5>
+                <h5>Terms of Use</h5>
+            </div>
+        </div>
+    </footer>
+</body>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</html>
