@@ -187,7 +187,7 @@
             max-width: 250px;
             border-radius: 11px;
             height: fit-content;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
             /* border: 1px solid rgb(255, 255, 0); */
         }
 
@@ -260,11 +260,13 @@
 
         .promo{
             display: flex;
+            position: relative;
             width: 100%;
             justify-content: center;
             padding: 50px 0;
             background: #E9F6FF;
             box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.05);
+            /* z-index: 1; */
             /* border: 1px solid yellow; */
         }
         .promo .content{
@@ -309,11 +311,17 @@
             background: #10509D;
             /* border: 1px solid rgb(0, 0, 0); */
         }
+        .button:hover{
+            cursor: pointer;
+            box-shadow: 0px 2px 4px 0px #3f6da46f;
+            transition: 0.05S;
+        }
 
         .foot{
             display: flex;
             width: 100%;
             justify-content: center;
+            background-color: #f2f2f2;
             /* border: 1px solid rgb(255, 0, 0); */
         }
         .foot .content{
@@ -353,6 +361,7 @@
             display: flex;
             width: 100%;
             justify-content: center;
+            background-color: #f2f2f2;
             /* border: 1px solid rgb(255, 0, 0); */
         }
         footer .content{
@@ -384,9 +393,10 @@
     </header>
     <nav class="desktop">
         <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="">About</a></li>
-            <li><a href="">Price</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="price.html">Price</a></li>
+            <li><a href="faq.html">FaQ</a></li>
         </ul>
     </nav>
     <div class="intro">
@@ -496,7 +506,7 @@
                     <h4>Limited Time Offer <span>Discount 80%</span></h4>
                     <h5>Don't Miss Out</h5>
                 </div>
-                <a href="" class="button"><ion-icon name="bag-outline"></ion-icon>Purchase</a>
+                <a href="price.html#product" class="button"><ion-icon name="bag-outline"></ion-icon>Purchase</a>
             </div>
         </div>
     </div>
