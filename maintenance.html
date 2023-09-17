@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maintenance</title>
+    <link rel="icon" href="images/gear.png">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            overflow-x: hidden;
+        }
+        h1{
+            position: absolute;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: 11vw;
+            white-space: nowrap;
+            color: rgba(102, 102, 102, 0.684);
+            max-width: 90%;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: -2;
+            
+        }
+        main{
+            width: 100%;
+        }
+        #girl{
+            position: absolute;
+            max-height: 90%;
+            max-width: 150%;
+            bottom: 0;
+            left: 48%;
+            transform: translateX(-50%);
+            z-index: 3;
+        }
+        #girl2{
+            position: absolute;
+            max-height: 75%;
+            max-width: 100%;
+            bottom: 0;
+            right: 0%;
+            transform: translateX(-10%);
+            opacity: 0.9;
+            z-index: 1;
+        }
+        #fench{
+            position: absolute;
+            max-height: 60%;
+            max-width: 100%;
+            bottom: 8%;
+            left: 0%;
+            transform: translateX(-20%);
+            opacity: 0.8;
+            z-index: -1;
+        }
+        #cement{
+            position: absolute;
+            max-height: 50%;
+            max-width: 100%;
+            bottom: 26%;
+            left: 13%;
+            transform: translateX(-20%);
+            opacity: 0.7;
+            z-index: -2;
+        }
+        #brick{
+            position: absolute;
+            max-height: 60%;
+            max-width: 200%;
+            bottom: 5%;
+            right: 0%;
+            transform: translateX(0%);
+            opacity: 0.5;
+            z-index: -2;
+        }
+        #fog{
+            position: absolute;
+            /* max-height: 60%; */
+            max-width: 100%;
+            bottom: 0%;
+            left: 0%;
+            transform: translateX(0%);
+            opacity: 1;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body oncontextmenu="return false;">
+    <main>
+        <h1 draggable="false">UNDER MAINTENANCE</h1>
+        <img src="images/3.png" id="girl" alt="GirlWithHat" draggable="false">
+        <img src="images/fench.png"  id="fench" alt="Fench" draggable="false">
+        <img src="images/fog.png"  id="fog" alt="Foq" draggable="false">
+        <img src="images/4.png" id="girl2" alt="GirlWithHat2" draggable="false">
+        <img src="images/cement.png" id="cement" alt="Cement" draggable="false">
+        <img src="images/brick.png" id="brick" alt="Brick" draggable="false">
+    </main>
+</body>
+</html>
